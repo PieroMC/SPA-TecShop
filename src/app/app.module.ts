@@ -12,7 +12,9 @@ import { ContentComponent } from './components/shared/content/content.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { MakesaleComponent } from './components/makesale/makesale.component';
 import { ReportsaleComponent } from './components/reportsale/reportsale.component';
+
 import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +24,10 @@ import { HomeComponent } from './components/home/home.component';
     ContentComponent,
     FooterComponent,
     MakesaleComponent,
+
     ReportsaleComponent,
     HomeComponent
+
   ],
   imports: [
     BrowserModule,
