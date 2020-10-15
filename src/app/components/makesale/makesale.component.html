@@ -1,90 +1,104 @@
-
-<div class="contenedor">
-    <div class="row">
-        <div class="col-6">
-
-            <div class="form-group">
-                <label>Voucher Type</label>
-                <select class="form-control" id="voucher">
-                    <option value="1">Ticket</option>
-                    <option value="2">Invoice</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="col-6">
-
-            <div class="form-group">
-                <label>Clients</label>
-                <select class="form-control" id="client">
-                    <option value="1">option 1</option>
-                    <option value="2">option 2</option>
-                    <option value="3">option 3</option>
-                    <option value="4">option 4</option>
-                    <option value="5">option 5</option>
-                </select>
-            </div>
-
-        </div>
-
-    </div>
+<form action="/home">
 
     <div class="row">
-        <div class="col-6">
-
-            <div class="form-group">
-                <label>Products</label>
-                <select class="form-control" id="products">
-                    <option value="1_opcion1_10_20">option 1</option>
-                    <option value="2_opcion1_10_20">option 2</option>
-                    <option value="3_opcion1_10_20">option 3</option>
-                    <option value="4_opcion1_10_20">option 4</option>
-                    <option value="5_opcion1_10_20">option 5</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="col-6">
-            <label>Quantiy</label><br>
-            <div class="form-group row">
-
+        <div class="col-md-12">
+            <div class="row">
                 <div class="col-6">
-                    <input class="form-control" type="text" placeholder="number" id="quantity" value="">
+                    <div class="form-group">
+                        <label>Voucher Type</label>
+                        <select class="form-control" id="voucher">
+                            <option value="1">Ticket</option>
+                            <option value="2">Invoice</option>
+                        </select>
+                    </div>
+
                 </div>
-                <div class="col-3">
-                    <button type="button" class="btn btn-success btn-block" id="add"><i class="fa fa-plus mr-2"></i>add</button>
+                <div class="col-5">
+                    <div class="form-group">
+                        <label>Clients</label>
+                        <select class="form-control" id="client">
+                            <option value="1">option 1</option>
+                            <option value="2">option 2</option>
+                            <option value="3">option 3</option>
+                            <option value="4">option 4</option>
+                            <option value="5">option 5</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Products</label>
+                        <select class="form-control" id="products">
+                            <option value="1_opcion1_10_20">option 1</option>
+                            <option value="2_opcion2_10_20">option 2</option>
+                            <option value="3_opcion3_10_20">option 3</option>
+                            <option value="4_opcion4_10_20">option 4</option>
+                            <option value="5_opcion4_10_20">option 5</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <label>Quantiy</label><br>
+                    <div class="form-group row">
+
+                        <div class="col-6">
+                            <input class="form-control" type="text" placeholder="number" id="quantity">
+                            <p id="error" class="text-danger font-weight-bold d-none">required</p>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-success btn-block" id="add" (click)="click()"><i
+                                    class="fa fa-plus mr-2"></i>
+                                <span>add</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="ml-3 col-12 d-none alert alert-danger" role="alert" id="error-exists">
+            <strong>This product is already added</strong>
+        </div>
+        <div class="ml-3 col-12 d-none alert alert-danger" role="alert" id="error-stock">
+            <strong>Insufficient stock</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table id="detalle" class="table table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>SubTotal</th>
+                </tr>
+            </table>
 
         </div>
-    </div><br>
-
-    <table class="table" id="detalle">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-                <th scope="col">SubTotal</th>
-                <th scope="col">Remove</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
+        <div class="col-md-12 mt-2">
+            <div class="row d-flex justify-content-between">
+                <div class="col-2"></div>
+                <div class="col-2"></div>
+                <div class="col-2"></div>
+                <div class="col-2">
                     <h5 class=" d-inline font-weight-bold">Total: </h5>
                     <h5 class=" ml-2 d-inline" id="total"></h5>
-                </td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
 
-    <input id="save" class="btn btn-success" type="submit" value="save">
-</div>
+    <input id="save" class="btn btn-success" type="submit"  value="save">
 
+</form>
