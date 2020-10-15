@@ -1,11 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// router
+import { APP_ROUTING } from "./app.routes";
+
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { ContentComponent } from './components/shared/content/content.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { MakesaleComponent } from './components/makesale/makesale.component';
+import { ReportsaleComponent } from './components/reportsale/reportsale.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +20,14 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     HeaderComponent,
     SidebarComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    MakesaleComponent,
+    ReportsaleComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]

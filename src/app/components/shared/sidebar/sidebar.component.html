@@ -12,7 +12,8 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" class="img-circle elevation-2"
+                    alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">Alexander Pierce</a>
@@ -26,7 +27,7 @@
                with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a [routerLink]="['/home']" class="nav-link">
                         <i class="nav-icon fa fa-Home"></i>
                         <p>
                             Home
@@ -44,13 +45,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a [routerLink]="['/sale/make']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Make sale</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a [routerLink]="['/sale/all']" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sale report</p>
                             </a>
