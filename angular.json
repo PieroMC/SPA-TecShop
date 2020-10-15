@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "TecShop-SPA"
+    }
+  },
+  "defaultProject": "TecShop-SPA",
+  "cli": {
+    "analytics": "d23d4f26-f71a-41ab-9706-2a0417771cfb"
+  }
 }
