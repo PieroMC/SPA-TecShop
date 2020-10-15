@@ -74,6 +74,65 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="assets/dist/js/demo.js"></script>
 
+	<script type="text/javascript">
+
+
+		let index = 0;
+		let i = 1;
+		let total = 0;
+		let list_Product = [];
+		$('#total').html(total);
+	
+		$('#add').click(function (e) {
+			e.preventDefault();
+			let product = $('#products').val().split('_');
+			let quantity = $('#quantity').val();
+	
+			if (validate(quantity, product[0], product[3])) {
+				let row = '<tr id="row' + index + '"><td><input type="hidden" name="list_products[]" value="' + product[0] + '"><input type="hidden" name="list_quantity[]" value="' + quantity + '">' + i++ + '</td><td>' + product[1] + '</td><td>' + quantity + '</td><td>' + product[2] + '</td><td>' + (product[2] * quantity) + '</td><td><button onclick="remove(' + index + ' , ' + (product[2] * quantity) + ' )" class="btn btn-danger"><i class="fas fa-minus"></i></button></td></tr>';
+				$('#error').removeClass('d-block');
+				$('#detalle').append(row);
+				total += (product[2] * quantity);
+				list_Product[index] = [product[0]];
+				$('#total').html(total);
+				index++;
+				$('#quantity').val(0);
+				$('#error-exists').removeClass('d-block');
+				$('#error-stock').removeClass('d-block');
+			}
+	
+		});
+	
+		function remove(row, price) {
+			$('#row' + row).remove();
+			total -= price;
+			list_Product.splice(row);
+			$('#total').html(total);
+			index--;
+			i--;
+		}
+	
+		function validate(units, id, stock) {
+			if (parseInt(units) <= stock) {
+				if (units != 0) {
+					for (let count = 0; count < list_Product.length; count++) {
+						const element = list_Product[count];
+						if (element == id) {
+							$('#error-exists').addClass('d-block');
+							return false;
+						}
+					}
+					return true;
+				} else {
+					$('#error').addClass('d-block');
+					return false;
+				}
+			} else {
+				$('#error-stock').addClass('d-block');
+				return false;
+			}
+		}
+	</script>
 </body>
 
 </html>
