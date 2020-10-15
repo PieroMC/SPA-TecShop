@@ -9,6 +9,8 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'sale/make', component: MakesaleComponent },
     { path: 'sale/all', component: ReportsaleComponent },
+    { path: 'sale/make:', component: ReportsaleComponent },
     { path: '**', pathMatch: 'full', redirectTo:'home'},
+    
 ];
 export const APP_ROUTING = RouterModule.forRoot(routes);
