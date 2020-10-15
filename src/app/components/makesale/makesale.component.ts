@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductService } from 'src/app/service/product.service';
+import { Product } from '../../interface/product';
+import { Client } from '../../interface/client';
+import { ClientService } from 'src/app/service/client.service';
 
 declare var jQuery: any;
 declare var $: any;
@@ -13,7 +18,20 @@ var list_Product = [];
 })
 export class MakesaleComponent implements OnInit {
 
-	constructor() { }
+	API = 'http://127.0.0.1:8000/api';
+	productos:Product[];
+	clientes:Client[];
+
+	constructor(private productsService:ProductService, private httpClient:HttpClient, private clientService:ClientService){
+		httpClient.get(this.API+'/productos').subscribe((data:Product[])=>{
+			this.productos=data;
+			
+		})
+		
+		httpClient.get(this.API+'/clientes').subscribe((data:Client[])=>{
+			this.clientes=data;
+		})
+	}
 
 	ngOnInit(): void {
 	}

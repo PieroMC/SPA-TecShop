@@ -17,11 +17,7 @@
                     <div class="form-group">
                         <label>Clients</label>
                         <select class="form-control" id="client">
-                            <option value="1">option 1</option>
-                            <option value="2">option 2</option>
-                            <option value="3">option 3</option>
-                            <option value="4">option 4</option>
-                            <option value="5">option 5</option>
+                            <option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.name }}</option>
                         </select>
                     </div>
                 </div>
@@ -34,11 +30,7 @@
                     <div class="form-group">
                         <label>Products</label>
                         <select class="form-control" id="products">
-                            <option value="1_opcion1_10_20">option 1</option>
-                            <option value="2_opcion2_10_20">option 2</option>
-                            <option value="3_opcion3_10_20">option 3</option>
-                            <option value="4_opcion4_10_20">option 4</option>
-                            <option value="5_opcion4_10_20">option 5</option>
+                            <option *ngFor="let producto of productos" value="{{ producto.id }}_{{ producto.name }}_{{ producto.unit_price }}_{{ producto.stock }}">{{ producto.name }}</option>
                         </select>
                     </div>
 
